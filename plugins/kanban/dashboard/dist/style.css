@@ -1626,7 +1626,10 @@
 .patrol-table a { display: inline-block; margin-inline-end: .5rem; text-decoration: underline; }
 .patrol-table summary { cursor: pointer; font-size: .6875rem; color: var(--ui-text-tertiary, inherit); margin-top: .35rem; }
 
-.patrol-table .patrol-issue { color: var(--ui-text-primary, var(--foreground, inherit)); font-weight: 500; }
+.patrol-table .patrol-issue { color: inherit; font-weight: 500; }
+.patrol-table .patrol-open-issue { appearance: none; display: inline; border: 0; border-radius: 0; padding: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; letter-spacing: normal; text-transform: none; text-align: left; cursor: pointer; }
+.patrol-table .patrol-open-issue:hover { text-decoration: underline; }
+.patrol-table .patrol-open-issue:focus-visible { outline: 2px solid currentColor; outline-offset: .2rem; }
 .patrol-table th, .patrol-table td { padding: .5rem; }
 
 /* Current patrol facts mount without the original technical detail tree. */

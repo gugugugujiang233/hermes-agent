@@ -994,7 +994,7 @@ function projectPatrolCurrent(task) {
           h("tbody", null, visible.map(function (row) {
             return h("tr", { key: row.ids[0] },
               h("td", null, row.project),
-              h("td", null, h(Button, { size: "sm", variant: "ghost", title: row.issueFull, onClick: function () { props.onOpen(row.ids[0]); } }, h("span", { className: "patrol-issue" }, row.issue)),
+              h("td", null, h("button", { type: "button", className: "patrol-open-issue", title: row.issueFull, onClick: function () { props.onOpen(row.ids[0]); } }, h("span", { className: "patrol-issue" }, row.issue)),
                 row.ids.length > 1 ? h("details", null, h("summary", null, `${row.ids.length} 条原始记录`), row.ids.map(function (id, index) { return h(Button, { key: id, size: "sm", variant: "ghost", onClick: function () { props.onOpen(id); } }, row.members ? (function () { const member = row.members.find(function (member) { return member.id === id; }); return `${member.title} · ${member.status} · ${member.gate}`; })() : `原始记录 ${index + 1}`); })) : null),
               h("td", null, row.status), h("td", { title: row.gateFull }, row.gate),
               h("td", null, row.refs.length ? row.refs.map(function (ref) {
