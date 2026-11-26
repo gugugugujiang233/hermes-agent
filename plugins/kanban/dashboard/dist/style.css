@@ -1609,3 +1609,37 @@
 .hermes-kanban-trash-label {
   font-weight: 500;
 }
+
+/* Patrol presentation only; legacy lanes keep their own layout. */
+.patrol-view { display: flex; flex-direction: column; min-height: 0; height: 100%; color: var(--ui-text-primary, inherit); padding: 1rem; gap: 1rem; }
+.patrol-header { display: flex; align-items: center; flex-wrap: wrap; gap: .75rem; }
+.patrol-header h1 { font-size: 1rem; font-weight: 600; margin: 0; }
+.patrol-header small { color: var(--ui-text-tertiary, inherit); font-size: .75rem; }
+.patrol-header > [role="combobox"], .patrol-header > select { width: auto; max-width: 9rem; }
+.patrol-header > input { max-width: 14rem; }
+.patrol-scroll { overflow: auto; min-height: 0; }
+.patrol-table { width: 100%; min-width: 40rem; table-layout: fixed; border-collapse: collapse; font-size: .8125rem; }
+.patrol-table th { font-weight: 500; text-align: left; color: var(--ui-text-tertiary, inherit); }
+.patrol-table th, .patrol-table td { padding: .75rem .5rem; vertical-align: top; overflow-wrap: anywhere; }
+.patrol-table thead { border-bottom: 1px solid var(--ui-stroke-tertiary, currentColor); }
+.patrol-table button { text-align: left; white-space: normal; }
+.patrol-table a { display: inline-block; margin-inline-end: .5rem; text-decoration: underline; }
+.patrol-table summary { cursor: pointer; font-size: .6875rem; color: var(--ui-text-tertiary, inherit); margin-top: .35rem; }
+
+.patrol-table .patrol-issue { color: inherit; font-weight: 500; }
+.patrol-table .patrol-open-issue { appearance: none; display: inline; border: 0; border-radius: 0; padding: 0; background: transparent; color: inherit; box-shadow: none; font: inherit; letter-spacing: normal; text-transform: none; text-align: left; cursor: pointer; }
+.patrol-table .patrol-open-issue:hover { text-decoration: underline; }
+.patrol-table .patrol-open-issue:focus-visible { outline: 2px solid currentColor; outline-offset: .2rem; }
+.patrol-table th, .patrol-table td { padding: .5rem; }
+
+/* Current patrol facts mount without the original technical detail tree. */
+.patrol-current { padding: 1rem; color: var(--ui-text-primary, var(--color-foreground)); overflow-wrap: anywhere; }
+.patrol-current h2 { margin: 0 0 .5rem; font-size: 1rem; font-weight: 600; }
+.patrol-current-status { font-size: .8125rem; }
+.patrol-current dl { display: grid; gap: .75rem; margin: 1rem 0; }
+.patrol-current dl > div { display: grid; grid-template-columns: 4.5rem minmax(0, 1fr); gap: .5rem; }
+.patrol-current dt { color: var(--color-muted-foreground); font-size: .8125rem; }
+.patrol-current dd { margin: 0; font-size: .875rem; line-height: 1.5; white-space: pre-wrap; }
+.patrol-current-pr { display: flex; gap: .75rem; font-size: .8125rem; }
+.patrol-current-pr a { text-decoration: underline; }
+.patrol-current-controls { display: flex; gap: .5rem; padding: .5rem 1rem 0; }
